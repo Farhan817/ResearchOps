@@ -1,0 +1,56 @@
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Brand */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+
+  /* Semantic */
+  --color-background: var(--app-background);
+  --color-foreground: var(--app-foreground);
+
+  --color-surface: var(--app-surface);
+  --color-surface-secondary: var(--app-surface-secondary);
+
+  --color-text-primary: var(--app-text-primary);
+  --color-text-secondary: var(--app-text-secondary);
+  --color-text-muted: var(--app-text-muted);
+
+  --color-border: var(--app-border);
+
+  --color-success: var(--app-success);
+  --color-warning: var(--app-warning);
+  --color-danger: var(--app-danger);
+  --color-info: var(--app-info);
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1rem;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgb(15 23 42 / 0.06);
+}
+
+import "./theme/light.css"
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}

@@ -1,0 +1,22 @@
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --app-background: #f8fafc;
+  --app-foreground: #0f172a;
+
+  --app-surface: #ffffff;
+  --app-surface-secondary: #f1f5f9;
+
+  --app-text-primary: #0f172a;
+  --app-text-secondary: #475569;
+  --app-text-muted: #94a3b8;
+
+  --app-border: #e2e8f0;
+
+  --app-success: #16a34a;
+  --app-warning: #d97706;
+  --app-danger: #dc2626;
+  --app-info: #0284c7;
+}
