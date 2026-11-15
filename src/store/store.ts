@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import authReducer from "./slice/AuthSlice";
+import experimentReducer from "./slice/ExperimentSlice";
+import ExpenseReducer from "./slice/ExpenseSlice";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    experiments: experimentReducer,
+    expense: ExpenseReducer,
   },
   devTools: import.meta.env.DEV,
 });

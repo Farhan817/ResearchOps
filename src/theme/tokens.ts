@@ -52,6 +52,7 @@ export const themeTokens = {
       sans: "Inter, sans-serif",
       mono: "JetBrains Mono, monospace",
     },
+
     fontSize: {
       xs: "0.75rem",
       sm: "0.875rem",
@@ -61,6 +62,19 @@ export const themeTokens = {
       "2xl": "1.5rem",
       "3xl": "1.875rem",
       "4xl": "2.25rem",
+    },
+
+    fontWeight: {
+      normal: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+    },
+
+    lineHeight: {
+      tight: 1.25,
+      normal: 1.5,
+      relaxed: 1.75,
     },
   },
 
@@ -76,6 +90,52 @@ export const themeTokens = {
     page: "1.5rem",
     card: "1.25rem",
     section: "2rem",
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    xs: "480px",
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px",
+  },
+
+  // Responsive layout tokens
+  responsive: {
+    container: {
+      sm: "100%",
+      md: "720px",
+      lg: "960px",
+      xl: "1140px",
+      "2xl": "1320px",
+    },
+
+    pagePadding: {
+      mobile: "1rem",
+      tablet: "1.5rem",
+      desktop: "2rem",
+    },
+
+    sectionGap: {
+      mobile: "1.25rem",
+      tablet: "1.5rem",
+      desktop: "2rem",
+    },
+
+    grid: {
+      mobile: 1,
+      tablet: 2,
+      desktop: 3,
+      wide: 4,
+    },
+
+    sidebar: {
+      expanded: "260px",
+      collapsed: "72px",
+      mobile: "0px",
+    },
   },
 
   shadows: {

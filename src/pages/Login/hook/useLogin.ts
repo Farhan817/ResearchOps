@@ -10,7 +10,6 @@ const useLogin = (): UseLoginReturn => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { mutate: loginMutation, isPending: loading } = useLoginApi();
-
   const formik = useFormik<LoginForm>({
     initialValues: {
       email: "",
@@ -24,6 +23,7 @@ const useLogin = (): UseLoginReturn => {
           onSuccess: (data) => {
             if (data.success) {
               showSuccessToast("Login Successfully");
+
               navigate("/dashboard", { replace: true });
             } else {
               showErrorToast(data.message);

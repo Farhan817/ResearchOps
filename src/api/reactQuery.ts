@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import type { QueryKey, UseQueryOptions } from "@tanstack/react-query";
-import type { AxiosError } from "axios";
+import type { AxiosError, AxiosRequestConfig } from "axios";
 
 import type {
   ApiConfig,
@@ -20,18 +20,18 @@ type UseFetchOptions<TData> = {
   >;
 };
 
-export function useFetch<TData = unknown>({
-  url,
-  params,
-  config,
-  queryKey,
-  queryOptions,
-}: UseFetchOptions<TData>) {
-  const key = queryKey ?? ["api", "get", url, params ?? {}];
-
+export function useFetch<TData = unknown>(
+  url: string,
+  params?: Record<string, unknown>,
+  config?: ApiConfig,
+  queryOptions?: Omit<
+    UseQueryOptions<TData, AxiosError>,
+    "queryKey" | "queryFn"
+  >,
+) {
   return useQuery<TData, AxiosError>({
     ...queryOptions,
-    queryKey: key,
+    queryKey: ["api", "get", url, params],
     queryFn: async ({ signal }) => {
       const response = await apiClient.get<TData>(url, {
         ...config,
@@ -43,7 +43,6 @@ export function useFetch<TData = unknown>({
     },
   });
 }
-
 export function useGenericMutation<
   TResponse = unknown,
   TBody = unknown,

@@ -1,11 +1,19 @@
-import type { UseMutationOptions } from "@tanstack/react-query";
+import type {
+  UseMutationOptions,
+  UseQueryOptions,
+} from "@tanstack/react-query";
 import type { AxiosError, AxiosRequestConfig, Method } from "axios";
+import type { Experiment } from "../mockAPi/handlers/types";
 
 export type ApiConfig = Omit<
   AxiosRequestConfig,
   "url" | "method" | "data" | "params" | "signal"
 >;
 
+export type ApiQueryOptions<TData> = Omit<
+  UseQueryOptions<TData, AxiosError>,
+  "queryKey" | "queryFn"
+>;
 export interface ApiResponse<T> {
   data: T;
 }
@@ -38,3 +46,9 @@ export interface UseGenericMutationOptions<
     "mutationFn"
   >;
 }
+
+export type ExperimentalDetailsResponse = {
+  data: Experiment;
+  success: boolean;
+  message: string;
+};
